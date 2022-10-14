@@ -11,6 +11,7 @@ class AppColor {
   static Color whopperBlack = const Color(0xff21114b);
   static Color whopperRed = const Color(0xffd13a27);
   static Color myThemeColor = const Color(0xffD93E11);
+  static Color offerWidget = const Color(0xffFEC8BD);
 
   static Color incrementBtnColor = const Color(0xffB0EAFD);
   static Color incrementSign = const Color(0xff47B6DA);

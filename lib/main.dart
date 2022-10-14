@@ -5,6 +5,7 @@ import 'package:res_capital_task_abdelhamid_ahmed/core/custom_widgets/location_t
 import 'package:res_capital_task_abdelhamid_ahmed/core/custom_widgets/search_widget.dart';
 import 'package:res_capital_task_abdelhamid_ahmed/core/custom_widgets/single_category_widget.dart';
 import 'package:res_capital_task_abdelhamid_ahmed/core/custom_widgets/single_deals_widget.dart';
+import 'package:res_capital_task_abdelhamid_ahmed/core/custom_widgets/single_offer_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -95,6 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
               const AddressWidget(),
               const SingleCategoryWidget(),
               const SingleDealsWidget(),
+              const SingleOfferWidget(),
               Text(
                 '$_counter',
                 style: Theme.of(context).textTheme.headline4,
