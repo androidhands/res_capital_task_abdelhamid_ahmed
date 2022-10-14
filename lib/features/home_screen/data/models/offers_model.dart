@@ -2,7 +2,7 @@ import 'package:meta/meta.dart';
 import 'package:res_capital_task_abdelhamid_ahmed/features/home_screen/domain/entities/offers_entity.dart';
 
 class OffersModel extends Offers {
-  OffersModel(
+  const OffersModel(
       {@required type,
       @required product,
       @required color,
@@ -23,7 +23,7 @@ class OffersModel extends Offers {
 
   Map<String, dynamic> toJson() {
     return {
-      '': type,
+      'type': type,
       'product': product,
       'color': color,
       'oldPrice': oldPrice,

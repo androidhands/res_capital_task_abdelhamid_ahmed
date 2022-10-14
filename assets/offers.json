@@ -1,0 +1,23 @@
+[
+    {
+        "type": "type",
+        "product": "product",
+        "color": "Color(0xffcdf5e7)",
+        "oldPrice": 13.1,
+        "note": "note"
+    },
+    {
+        "type": "type",
+        "product": "product",
+        "color": "Color(0xffccb8ff)",
+        "oldPrice": 13.1,
+        "note": "note"
+    },
+    {
+        "type": "type",
+        "product": "product",
+        "color": "Color(0xffb0eafd)",
+        "oldPrice": 13.1,
+        "note": "note"
+    }
+]

@@ -3,7 +3,7 @@ import 'package:flutter/animation.dart';
 
 class Categories extends Equatable {
   final String? category;
-  final Color? color;
+  final dynamic color;
 
   const Categories(this.category, this.color);
  

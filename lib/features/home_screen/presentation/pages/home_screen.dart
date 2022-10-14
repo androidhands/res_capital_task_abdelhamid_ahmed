@@ -68,9 +68,7 @@ class HomeScreen extends GetWidget<HomeViewModel> {
                     ),
                   ],
                 ),
-
-
-                controller.isLoodinDeals.value
+          controller.isLoodinDeals.value
               ? const Center(
                   child: CircularProgressIndicator(),
                 )
@@ -97,19 +95,15 @@ class HomeScreen extends GetWidget<HomeViewModel> {
                     ),
                   ],
                 ),
-
-
-
-                   controller.isLoodinOffers.value
+          controller.isLoodinOffers.value
               ? const Center(
                   child: CircularProgressIndicator(),
                 )
               : StreamBuilder<Object>(
-                stream: null,
-                builder: (context, snapshot) {
-                  return Column(
+                  stream: null,
+                  builder: (context, snapshot) {
+                    return Column(
                       children: [
-                       
                         ListView(
                           shrinkWrap: true,
                           scrollDirection: Axis.horizontal,
@@ -121,8 +115,7 @@ class HomeScreen extends GetWidget<HomeViewModel> {
                         ),
                       ],
                     );
-                }
-              ),
+                  }),
         ],
       )),
     );

@@ -1,0 +1,29 @@
+[
+    {
+        "": "product",
+        "color": "Color(0xffcdf5e7)",
+        "pricesCount": 2,
+        "address": "address",
+        "newPrice": 12.2,
+        "oldPrice": 13.1,
+        "isFavourite": true
+    },
+    {
+        "": "product",
+        "color": "Color(0xffcdf5e7)",
+        "pricesCount": 2,
+        "address": "address",
+        "newPrice": 12.2,
+        "oldPrice": 13.1,
+        "isFavourite": true
+    },
+    {
+        "": "product",
+        "color": "Color(0xffcdf5e7)",
+        "pricesCount": 2,
+        "address": "address",
+        "newPrice": 12.2,
+        "oldPrice": 13.1,
+        "isFavourite": true
+    }
+]
