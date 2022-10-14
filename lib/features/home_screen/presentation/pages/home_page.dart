@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:res_capital_task_abdelhamid_ahmed/core/app_colors/app_color.dart';
 import 'package:res_capital_task_abdelhamid_ahmed/features/cart_screen/presentation/pages/cart_page.dart';
+import 'package:res_capital_task_abdelhamid_ahmed/features/cart_screen/presentation/view_models/cart_view_model.dart';
 import 'package:res_capital_task_abdelhamid_ahmed/features/home_screen/presentation/pages/home_screen.dart';
 import 'package:res_capital_task_abdelhamid_ahmed/features/home_screen/presentation/view_models/screens_view_model.dart';
 
@@ -12,30 +13,34 @@ class HomePage extends GetWidget<ScreensViewModel> {
   @override
   Widget build(BuildContext context) {
     return Obx(() => Scaffold(
-          floatingActionButton: FloatingActionButton(
-            onPressed: null,
-            backgroundColor: AppColor.myThemeColor,
-            child: Stack(
-              children: [
-                Image.asset(
-                  'assets/cart_floating.png',
-                  height: 50,
-                  width: 50,
-                ),
-                Positioned(
-                  top: 4,
-                  left: 5,
-                  child: Text(
-                    '\$12',
-                    style: GoogleFonts.poppins(
-                        color: AppColor.white,
-                        fontSize: 9,
-                        fontWeight: FontWeight.bold),
+          floatingActionButton: GetBuilder<CartViewModel>(
+              init: Get.find<CartViewModel>(),
+              builder: (cController) {
+                return FloatingActionButton(
+                  onPressed: null,
+                  backgroundColor: AppColor.myThemeColor,
+                  child: Stack(
+                    children: [
+                      Image.asset(
+                        'assets/cart_floating.png',
+                        height: 40,
+                        width: 40,
+                      ),
+                      Positioned(
+                        top: 4,
+                        left: 5,
+                        child: Text(
+                          '\$${cController.totalCartPrice.value.toStringAsFixed(1)}',
+                          style: GoogleFonts.poppins(
+                              color: AppColor.white,
+                              fontSize: 10,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      )
+                    ],
                   ),
-                )
-              ],
-            ),
-          ),
+                );
+              }),
           bottomNavigationBar: BottomAppBar(
               shape: const CircularNotchedRectangle(),
               notchMargin: 5,

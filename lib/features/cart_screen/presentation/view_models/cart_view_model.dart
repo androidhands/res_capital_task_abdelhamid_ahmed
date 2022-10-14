@@ -11,8 +11,7 @@ class CartViewModel extends GetxController {
   CartViewModel({this.getCartUseCase});
 
   var isLoodingCart = false.obs;
-  final Rxn<List<Cart>> _cartList = Rxn<List<Cart>>();
-  List<Cart> get cartList => _cartList.value!;
+  final Rxn<List<Cart>> cartList = Rxn<List<Cart>>();
 
   getCartList() async {
     isLoodingCart.value = true;
@@ -29,30 +28,52 @@ class CartViewModel extends GetxController {
               child: const Text('Ok')));
     }, (r) {
       isLoodingCart.value = false;
-      _cartList.value = null;
-      _cartList.value = r;
+      cartList.value = null;
+      cartList.value = r;
     });
+  }
+
+  Rxn<Cart> selectedCart = Rxn<Cart>();
+
+  increment(Cart c, int index) {
+    selectedCart.value = null;
+    selectedCart.value = c;
+    selectedCart.value!.count++;
+    selectedCart.value!.totalPrice =
+        selectedCart.value!.price * selectedCart.value!.count;
+    cartList.value![index] = selectedCart.value!;
+    callculateTotalCartPrice();
+    update();
+  }
+
+  decrement(Cart c, int index) {
+    selectedCart.value = null;
+    selectedCart.value = c;
+    if (selectedCart.value!.count > 0) {
+      selectedCart.value!.count--;
+      selectedCart.value!.totalPrice =
+          selectedCart.value!.price * selectedCart.value!.count;
+      cartList.value![index] = selectedCart.value!;
+
+      update();
+    }
+    callculateTotalCartPrice();
+  }
+
+  var totalCartPrice = 0.0.obs;
+
+  callculateTotalCartPrice() {
+    double price = 0.0;
+    for (Cart c in cartList.value!) {
+      price = price + c.totalPrice!;
+    }
+    totalCartPrice.value = price;
+    update();
   }
 
   @override
   void onInit() {
     super.onInit();
     getCartList();
-  }
-
-  void decrement(Cart c, int index) {
-    int count = c.count;
-    count--;
-    double price = c.price * count;
-    _cartList.value![index].setPrice(price);
-    update();
-  }
-
-  void increment(Cart c, int index) {
-    int count = c.count;
-    count++;
-    double price = c.price * count;
-    _cartList.value![index].setPrice(price);
-    update();
   }
 }

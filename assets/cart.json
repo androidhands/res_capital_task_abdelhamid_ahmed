@@ -1,24 +1,34 @@
-[{
-    "product":"Turkish Steak",
-    "description":"173 Grams",
-    "count":"5",
-    "totalPrice":"25"
-},
-{
-    "product":"Salmon",
-    "description":"2 Serving",
-    "count":"1",
-    "totalPrice":"30"
-},
-{
-    "product":"Red Juice",
-    "description":"1 Bottle",
-    "count":"4",
-    "totalPrice":"35"
-},
-{
-    "product":"Cola",
-    "description":"1 Bottle",
-    "count":"6",
-    "totalPrice":"20"
-}]
+[
+    {
+        "product": "product",
+        "description": "description",
+        "count": 0,
+        "totalPrice": 0.0,
+        "color": 4294557101,
+        "price": 12.3
+    },
+    {
+        "product": "product",
+        "description": "description",
+        "count": 0,
+        "totalPrice": 0.0,
+        "color": 4294557101,
+        "price": 12.3
+    },
+    {
+        "product": "product",
+        "description": "description",
+        "count": 0,
+        "totalPrice": 0.0,
+        "color": 4294557101,
+        "price": 12.3
+    },
+    {
+        "product": "product",
+        "description": "description",
+        "count": 0,
+        "totalPrice": 0.0,
+        "color": 4294557101,
+        "price": 12.3
+    }
+]

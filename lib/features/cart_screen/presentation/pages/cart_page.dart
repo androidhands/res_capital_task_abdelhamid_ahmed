@@ -15,73 +15,79 @@ class CartPage extends GetWidget<CartViewModel> {
 
   @override
   Widget build(BuildContext context) {
- /*    List<CartModel> list = [];
+    List<CartModel> list = [];
     list.add(CartModel(
         product: 'product',
         description: 'description',
         count: 0,
-        totalPrice: 0,
+        totalPrice: 0.0,
         color: 4294557101,
         price: 12.3));
     list.add(CartModel(
         product: 'product',
         description: 'description',
         count: 0,
-        totalPrice: 0,
+        totalPrice: 0.0,
         color: 4294557101,
         price: 12.3));
     list.add(CartModel(
         product: 'product',
         description: 'description',
         count: 0,
-        totalPrice: 0,
+        totalPrice: 0.0,
         color: 4294557101,
         price: 12.3));
     list.add(CartModel(
         product: 'product',
         description: 'description',
         count: 0,
-        totalPrice: 0,
+        totalPrice: 0.0,
         color: 4294557101,
         price: 12.3));
-    debugPrint(jsonEncode(list)); */
+    debugPrint(jsonEncode(list));
 
-    return SingleChildScrollView(
-        child: Column(
-      children: [
-        GetBuilder<HomeViewModel>(
-            init: Get.find<HomeViewModel>(),
-            builder: (hController) {
-              return hController.isLoodinAddresses.value
-                  ? const Center(
-                      child: CircularProgressIndicator(),
-                    )
-                  : LocationTopWidget(
-                      address: hController.currentAddress,
+    return Obx(
+      () => SingleChildScrollView(
+          child: Column(
+        children: [
+          GetBuilder<HomeViewModel>(
+              init: Get.find<HomeViewModel>(),
+              builder: (hController) {
+                return hController.isLoodinAddresses.value
+                    ? const Center(
+                        child: CircularProgressIndicator(),
+                      )
+                    : LocationTopWidget(
+                        address: hController.currentAddress,
+                      );
+              }),
+          const SizedBox(
+            height: 15,
+          ),
+          Text(
+            'Cart',
+            style: GoogleFonts.poppins(
+                color: AppColor.fontGrey,
+                fontSize: 15,
+                fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(
+            height: 5,
+          ),
+          controller.isLoodingCart.value
+              ? const Center(
+                  child: CircularProgressIndicator(),
+                )
+              : ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: controller.cartList.value!.length,
+                  itemBuilder: ((context, index) {
+                    return SingleCartWidget(
+                      cart: controller.cartList.value![index],index: index,
                     );
-            }),
-        const SizedBox(
-          height: 15,
-        ),
-        Text(
-          'Cart',
-          style: GoogleFonts.poppins(
-              color: AppColor.fontGrey,
-              fontSize: 15,
-              fontWeight: FontWeight.bold),
-        ),
-        const SizedBox(
-          height: 5,
-        ),
-        ListView.builder(
-            shrinkWrap: true,
-            itemCount: controller.cartList.length,
-            itemBuilder: ((context, index) {
-              return SingleCartWidget(
-                cart: controller.cartList[index],
-              );
-            }))
-      ],
-    ));
+                  }))
+        ],
+      )),
+    );
   }
 }
