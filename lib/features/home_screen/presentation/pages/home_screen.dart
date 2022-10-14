@@ -8,7 +8,9 @@ class HomeScreen extends StatelessWidget {
     return Container(
       child: SingleChildScrollView(
           child: Column(
-        children: [],
+        children: [
+          
+        ],
       )),
     );
   }
