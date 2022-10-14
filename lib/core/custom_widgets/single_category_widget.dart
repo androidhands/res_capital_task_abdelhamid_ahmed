@@ -1,9 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:res_capital_task_abdelhamid_ahmed/core/app_colors/app_color.dart';
+import 'package:res_capital_task_abdelhamid_ahmed/features/home_screen/domain/entities/categories_entity.dart';
 
 class SingleCategoryWidget extends StatelessWidget {
-  const SingleCategoryWidget({super.key});
+  final Categories? categories;
+
+  const SingleCategoryWidget({super.key, this.categories});
+
 
   @override
   Widget build(BuildContext context) {
@@ -19,11 +23,11 @@ class SingleCategoryWidget extends StatelessWidget {
           margin: const EdgeInsets.all(3),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
-            color: AppColor.addressSqureColor,
+            color: categories!.color,
           ),
         ),
         Text(
-          'category',
+          categories!.category!,
           style: GoogleFonts.poppins(color: AppColor.fontGrey, fontSize: 11),
         ),
       ]),

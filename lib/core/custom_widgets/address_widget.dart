@@ -1,9 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:res_capital_task_abdelhamid_ahmed/core/app_colors/app_color.dart';
+import 'package:res_capital_task_abdelhamid_ahmed/features/home_screen/domain/entities/addresses_entity.dart';
 
 class AddressWidget extends StatelessWidget {
-  const AddressWidget({super.key});
+  final Address? address;
+
+  const AddressWidget({super.key, this.address});
+
 
   @override
   Widget build(BuildContext context) {
@@ -32,19 +36,19 @@ class AddressWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'data',
+                 address!.addressType!,
                   style: GoogleFonts.poppins(
                       color: AppColor.searchIconsColor,
                       fontSize: 11,
                       fontWeight: FontWeight.bold),
                 ),
                 Text(
-                  'data',
+                  address!.address!,
                   style: GoogleFonts.poppins(
                       color: AppColor.fontGrey, fontSize: 9),
                 ),
                 Text(
-                  'data',
+                 address!.street!,
                   style: GoogleFonts.poppins(
                       color: AppColor.fontGrey, fontSize: 9),
                 )

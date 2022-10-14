@@ -1,8 +1,9 @@
 import 'package:equatable/equatable.dart';
+import 'package:flutter/animation.dart';
 
 class Deals extends Equatable {
   final String? product;
-  final String? color;
+  final Color? color;
   final int? pricesCount;
   final String? address;
   final double? newPrice;

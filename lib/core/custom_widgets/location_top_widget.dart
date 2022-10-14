@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:res_capital_task_abdelhamid_ahmed/core/app_colors/app_color.dart';
+import 'package:res_capital_task_abdelhamid_ahmed/features/home_screen/domain/entities/addresses_entity.dart';
 
 class LocationTopWidget extends StatelessWidget {
-  final String? location;
+  final Address? address;
 
-  const LocationTopWidget({super.key, this.location});
+  const LocationTopWidget({super.key, this.address});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +33,7 @@ class LocationTopWidget extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(bottom: 10),
                     child: Text(
-                      location!,
+                      address!.address!,
                       style: GoogleFonts.poppins(
                         color: AppColor.white,
                         fontSize: 11,

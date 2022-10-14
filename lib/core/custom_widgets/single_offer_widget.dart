@@ -3,9 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:res_capital_task_abdelhamid_ahmed/core/app_colors/app_color.dart';
 import 'package:res_capital_task_abdelhamid_ahmed/core/app_constants/app_constants.dart';
+import 'package:res_capital_task_abdelhamid_ahmed/features/home_screen/domain/entities/offers_entity.dart';
 
 class SingleOfferWidget extends StatelessWidget {
-  const SingleOfferWidget({super.key});
+  final Offers? offers;
+
+  const SingleOfferWidget({super.key, this.offers});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +18,7 @@ class SingleOfferWidget extends StatelessWidget {
       padding: const EdgeInsets.all(5),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(13),
-          color: AppColor.offerWidget,
+          color: offers!.color!,
           border: Border.all(width: 0.2, color: AppColor.fontGrey)),
       child: Row(
         children: [
@@ -37,7 +40,7 @@ class SingleOfferWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Mega',
+                      offers!.type!,
                       style: GoogleFonts.poppins(
                           color: AppColor.whopperRed, fontSize: 11),
                     ),
@@ -71,7 +74,7 @@ class SingleOfferWidget extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text(
-                          '\$12',
+                          '\$${offers!.newPrice!.toString()}',
                           style: GoogleFonts.poppins(
                               color: AppColor.myThemeColor,
                               fontSize: 18,
@@ -80,7 +83,7 @@ class SingleOfferWidget extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.only(left: 20),
                           child: Text(
-                            "\$13",
+                            "\$${offers!.oldPrice!.toString()}",
                             style: GoogleFonts.poppins(
                               color: AppColor.white,
                               fontSize: 18,
@@ -91,7 +94,7 @@ class SingleOfferWidget extends StatelessWidget {
                       ],
                     ),
                     Text(
-                      AppConstants.offerTxt,
+                      offers!.note!,
                       style: GoogleFonts.poppins(
                           color: AppColor.white, fontSize: 10),
                     ),

@@ -2,9 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:res_capital_task_abdelhamid_ahmed/core/app_colors/app_color.dart';
+import 'package:res_capital_task_abdelhamid_ahmed/features/home_screen/domain/entities/deals_entity.dart';
 
 class SingleDealsWidget extends StatelessWidget {
-  const SingleDealsWidget({super.key});
+  final Deals? deals;
+
+  const SingleDealsWidget({super.key, this.deals});
+  
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +29,7 @@ class SingleDealsWidget extends StatelessWidget {
                 height: 100,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
-                  color: AppColor.addressSqureColor,
+                  color:deals!.color!,
                 ),
               ),
               Positioned(
@@ -38,7 +42,7 @@ class SingleDealsWidget extends StatelessWidget {
                         borderRadius: BorderRadius.circular(75),
                         color: AppColor.white),
                     child: Image.asset(
-                      'assets/heart_transparent.png',
+                     deals!.isFavourite!?'assets/heart_red.png': 'assets/heart_transparent.png',
                       height: 30,
                       width: 30,
                     ),
@@ -53,14 +57,14 @@ class SingleDealsWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'data',
+                  deals!.product!,
                   style: GoogleFonts.poppins(
                       color: AppColor.searchIconsColor,
                       fontSize: 11,
                       fontWeight: FontWeight.bold),
                 ),
                 Text(
-                  'data',
+                  'Prices ${deals!.pricesCount!.toString()}',
                   style: GoogleFonts.poppins(
                       color: AppColor.fontGrey, fontSize: 10),
                 ),
@@ -75,8 +79,8 @@ class SingleDealsWidget extends StatelessWidget {
                           color: AppColor.fontGrey,
                         ),
                       ),
-                      const TextSpan(
-                        text: "data aaaa",
+                       TextSpan(
+                        text:deals!.address!,
                       ),
                     ],
                     style: GoogleFonts.poppins(
@@ -86,7 +90,7 @@ class SingleDealsWidget extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      '\$12',
+                      '\$${deals!.newPrice!}',
                       style: GoogleFonts.poppins(
                           color: AppColor.myThemeColor,
                           fontSize: 13,
@@ -95,7 +99,7 @@ class SingleDealsWidget extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        "\$13",
+                        "\$${deals!.oldPrice!}",
                         style: GoogleFonts.poppins(
                           color: Color(0xff464646),
                           fontSize: 13,
