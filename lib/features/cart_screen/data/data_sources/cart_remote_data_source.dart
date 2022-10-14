@@ -17,7 +17,7 @@ class CartRemoteDataSourceImpl implements CartRemoteDataSource {
   Future<List<Cart>> getCart() async {
     try {
       final String response =
-          await rootBundle.loadString('lib/core/app_constants/cart.json');
+          await rootBundle.loadString('assets/cart.json');
 
       final data = await jsonDecode(response);
 

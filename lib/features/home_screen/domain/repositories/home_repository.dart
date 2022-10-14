@@ -11,5 +11,5 @@ abstract class HomeRepository{
   Future<Either<Failure,List<Categories>>> getCategories();
   Future<Either<Failure,List<Offers>>> getOffers();
   Future<Either<Failure,List<Deals>>> getDeals();
-  Future<Either<Failure,List<Cart>>> getCart();
+
 }

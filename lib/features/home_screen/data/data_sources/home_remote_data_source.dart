@@ -20,7 +20,7 @@ abstract class HomeRemoteDataSource {
   Future<List<Categories>> getCategories();
   Future<List<Offers>> getOffers();
   Future<List<Deals>> getDeals();
-  Future<List<Cart>> getCart();
+
 }
 
 class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
@@ -28,7 +28,7 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
   Future<List<Address>> getAddress() async {
     try {
       final String response =
-          await rootBundle.loadString('lib/core/app_constants/addresses.json');
+          await rootBundle.loadString('assets/addresses.json');
 
       final data = await jsonDecode(response);
 
@@ -38,25 +38,13 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
     }
   }
 
-  @override
-  Future<List<Cart>> getCart() async {
-    try {
-      final String response =
-          await rootBundle.loadString('lib/core/app_constants/cart.json');
 
-      final data = await jsonDecode(response);
-
-      return List<Cart>.from(data.map((e) => CartModel.fromJson(e)));
-    } on FlutterError catch (e) {
-      throw ServerException(e.message);
-    }
-  }
 
   @override
   Future<List<Categories>> getCategories() async {
     try {
       final String response =
-          await rootBundle.loadString('lib/core/app_constants/cart.json');
+          await rootBundle.loadString('assets/categories.json');
 
       final data = await jsonDecode(response);
 
@@ -71,7 +59,7 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
   Future<List<Deals>> getDeals() async {
     try {
       final String response =
-          await rootBundle.loadString('lib/core/app_constants/cart.json');
+          await rootBundle.loadString('assets/deals.json');
 
       final data = await jsonDecode(response);
 
@@ -85,7 +73,7 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
   Future<List<Offers>> getOffers() async {
     try {
       final String response =
-          await rootBundle.loadString('lib/core/app_constants/cart.json');
+          await rootBundle.loadString('assets/offers.json');
 
       final data = await jsonDecode(response);
 

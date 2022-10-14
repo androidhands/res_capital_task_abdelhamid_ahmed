@@ -24,15 +24,7 @@ class HomeRepositoryImpl implements HomeRepository {
     }
   }
 
-  @override
-  Future<Either<Failure, List<Cart>>> getCart() async{
-    try {
-      var results = await homeRemoteDataSource!.getCart();
-      return Right(results);
-    } on ServerException catch (e) {
-      return Left(ServerFailure(e.message));
-    }
-  }
+
 
   @override
   Future<Either<Failure, List<Categories>>> getCategories()async {
