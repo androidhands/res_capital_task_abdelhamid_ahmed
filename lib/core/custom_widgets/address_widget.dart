@@ -3,6 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:res_capital_task_abdelhamid_ahmed/core/app_colors/app_color.dart';
 
 class AddressWidget extends StatelessWidget {
+  const AddressWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -25,14 +27,16 @@ class AddressWidget extends StatelessWidget {
           ),
           Expanded(
               child: Padding(
-            padding: EdgeInsets.only(left: 10),
+            padding: const EdgeInsets.only(left: 10),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   'data',
                   style: GoogleFonts.poppins(
-                      color: AppColor.searchIconsColor, fontSize: 11),
+                      color: AppColor.searchIconsColor,
+                      fontSize: 11,
+                      fontWeight: FontWeight.bold),
                 ),
                 Text(
                   'data',

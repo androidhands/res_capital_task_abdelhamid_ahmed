@@ -3,6 +3,7 @@ import 'package:res_capital_task_abdelhamid_ahmed/core/app_colors/app_color.dart
 import 'package:res_capital_task_abdelhamid_ahmed/core/custom_widgets/address_widget.dart';
 import 'package:res_capital_task_abdelhamid_ahmed/core/custom_widgets/location_top_widget.dart';
 import 'package:res_capital_task_abdelhamid_ahmed/core/custom_widgets/search_widget.dart';
+import 'package:res_capital_task_abdelhamid_ahmed/core/custom_widgets/single_category_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -89,8 +90,9 @@ class _MyHomePageState extends State<MyHomePage> {
               const LocationTopWidget(
                 location: 'Mostafa st.',
               ),
-              SearchWidget(),
-              AddressWidget(),
+              const SearchWidget(),
+              const AddressWidget(),
+              const SingleCategoryWidget(),
               Text(
                 '$_counter',
                 style: Theme.of(context).textTheme.headline4,
