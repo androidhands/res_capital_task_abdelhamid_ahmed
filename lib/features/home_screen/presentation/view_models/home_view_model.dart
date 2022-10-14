@@ -23,13 +23,13 @@ class HomeViewModel extends GetxController {
   final Rxn<Address> _currentAddress = Rxn<Address>();
   get currentAddress => _currentAddress.value;
   final Rxn<List<Address>> _addressesList = Rxn<List<Address>>();
-  get addressesList => _addressesList.value;
+  List<Address> get addressesList => _addressesList.value!;
   final Rxn<List<Categories>> _categoriesList = Rxn<List<Categories>>();
-  get categoriesList => _categoriesList.value;
+  List<Categories> get categoriesList => _categoriesList.value!;
   final Rxn<List<Deals>> _dealsList = Rxn<List<Deals>>();
-  get dealsList => _dealsList.value;
+  List<Deals> get dealsList => _dealsList.value!;
   final Rxn<List<Offers>> _offersList = Rxn<List<Offers>>();
-  get offersList => _offersList.value;
+  List<Offers> get offersList => _offersList.value!;
 
   var isLoodinAddresses = false.obs;
   var isLoodingCategories = false.obs;
@@ -124,5 +124,14 @@ class HomeViewModel extends GetxController {
       _offersList.value = r;
       update();
     });
+  }
+
+  @override
+  void onInit() {
+    super.onInit();
+    getAddressesList();
+    getCategoriesList();
+    getDealsList();
+    getOffersList();
   }
 }
