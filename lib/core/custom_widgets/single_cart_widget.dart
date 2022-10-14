@@ -1,13 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:res_capital_task_abdelhamid_ahmed/core/app_colors/app_color.dart';
 import 'package:res_capital_task_abdelhamid_ahmed/features/cart_screen/domain/entities/cart_entity.dart';
+import 'package:res_capital_task_abdelhamid_ahmed/features/cart_screen/presentation/view_models/cart_view_model.dart';
 
-class SingleCartWidget extends StatelessWidget {
+class SingleCartWidget extends GetView<CartViewModel> {
   final Cart? cart;
+  final int? index;
 
-  const SingleCartWidget({super.key, this.cart});
+  const SingleCartWidget({super.key, this.cart, this.index});
 
   @override
   Widget build(BuildContext context) {
@@ -58,6 +61,9 @@ class SingleCartWidget extends StatelessWidget {
             child: Row(
           children: [
             GestureDetector(
+              onTap: () {
+                controller.decrement(cart!, index!);
+              },
               child: Material(
                   child: Container(
                 height: 43,
@@ -90,6 +96,9 @@ class SingleCartWidget extends StatelessWidget {
               width: 15,
             ),
             GestureDetector(
+              onTap: () {
+                controller.increment(cart!, index!);
+              },
               child: Material(
                   child: Container(
                 height: 43,
