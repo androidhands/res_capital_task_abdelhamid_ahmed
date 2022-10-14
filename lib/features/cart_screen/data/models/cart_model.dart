@@ -1,4 +1,4 @@
-import 'package:res_capital_task_abdelhamid_ahmed/features/home_screen/domain/entities/cart_entity.dart';
+import 'package:res_capital_task_abdelhamid_ahmed/features/cart_screen/domain/entities/cart_entity.dart';
 import 'package:meta/meta.dart';
 
 class CartModel extends Cart {
