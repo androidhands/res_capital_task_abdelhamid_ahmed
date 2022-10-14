@@ -130,24 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomAppBar(
-          shape: const CircularNotchedRectangle(),
-          notchMargin: 5,
-          clipBehavior: Clip.antiAlias,
-          child: Container(
-            height: 56,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                IconButton(icon: Icon(Icons.home), onPressed: () {}),
-                IconButton(icon: Icon(Icons.search), onPressed: () {}),
-                const SizedBox(width: 40), // The dummy child
-                IconButton(icon: Icon(Icons.notifications), onPressed: () {}),
-                IconButton(icon: Icon(Icons.message), onPressed: () {}),
-              ],
-            ),
-          )),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+     
     );
   }
 }
