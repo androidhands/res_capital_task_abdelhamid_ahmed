@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:res_capital_task_abdelhamid_ahmed/core/app_colors/app_color.dart';
 
@@ -63,15 +64,29 @@ class SingleDealsWidget extends StatelessWidget {
                   style: GoogleFonts.poppins(
                       color: AppColor.fontGrey, fontSize: 10),
                 ),
-                Text(
-                  'data',
-                  style: GoogleFonts.poppins(
-                      color: AppColor.fontGrey, fontSize: 10),
+                RichText(
+                  text: TextSpan(
+                    children: [
+                      WidgetSpan(
+                        child: Image.asset(
+                          'assets/location.png',
+                          width: 12,
+                          height: 12,
+                          color: AppColor.fontGrey,
+                        ),
+                      ),
+                      const TextSpan(
+                        text: "data aaaa",
+                      ),
+                    ],
+                    style: GoogleFonts.poppins(
+                        color: AppColor.fontGrey, fontSize: 10),
+                  ),
                 ),
                 Row(
                   children: [
                     Text(
-                      '12',
+                      '\$12',
                       style: GoogleFonts.poppins(
                           color: AppColor.myThemeColor,
                           fontSize: 13,
@@ -80,9 +95,12 @@ class SingleDealsWidget extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        "data",
+                        "\$13",
                         style: GoogleFonts.poppins(
-                            color: Color(0xff464646), fontSize: 13),
+                          color: Color(0xff464646),
+                          fontSize: 13,
+                          decoration: TextDecoration.lineThrough,
+                        ),
                       ),
                     )
                   ],
