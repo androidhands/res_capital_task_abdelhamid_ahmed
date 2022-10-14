@@ -5,9 +5,10 @@ class Cart extends Equatable {
   final String? description;
   int? count;
   double? totalPrice;
+  dynamic color;
 
-  Cart(this.product, this.description, this.count, this.totalPrice);
+  Cart(this.product, this.description, this.count, this.totalPrice,this.color);
 
   @override
-  List<Object?> get props => [product, description, count, totalPrice];
+  List<Object?> get props => [product, description, count, totalPrice,color];
 }

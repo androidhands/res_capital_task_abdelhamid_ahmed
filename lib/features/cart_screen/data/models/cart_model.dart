@@ -6,15 +6,17 @@ class CartModel extends Cart {
       {@required product,
       @required description,
       @required count,
-      @required totalPrice})
-      : super(product, description, count, totalPrice);
+      @required totalPrice,
+      @required color})
+      : super(product, description, count, totalPrice,color);
 
   factory CartModel.fromJson(Map<String, dynamic> json) {
     return CartModel(
         product: json['product'],
         description: json['description'],
         count: json['count'],
-        totalPrice: json['totalPrice']);
+        totalPrice: json['totalPrice'],
+        color: json['color']);
   }
 
   Map<String, dynamic> toJson() {
@@ -23,6 +25,7 @@ class CartModel extends Cart {
       'description': description,
       'count': count,
       'totalPrice': totalPrice,
+      'color':color
     };
   }
 }
