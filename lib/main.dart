@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:res_capital_task_abdelhamid_ahmed/core/app_colors/app_color.dart';
+import 'package:res_capital_task_abdelhamid_ahmed/core/custom_widgets/address_widget.dart';
 import 'package:res_capital_task_abdelhamid_ahmed/core/custom_widgets/location_top_widget.dart';
 import 'package:res_capital_task_abdelhamid_ahmed/core/custom_widgets/search_widget.dart';
 
@@ -89,6 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 location: 'Mostafa st.',
               ),
               SearchWidget(),
+              AddressWidget(),
               Text(
                 '$_counter',
                 style: Theme.of(context).textTheme.headline4,

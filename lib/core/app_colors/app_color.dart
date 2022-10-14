@@ -5,7 +5,7 @@ class AppColor {
   static Color geryWhite = const Color(0xfff5f7f9);
   static Color searchColor = const Color(0xfff5f7f9);
   static Color searchIconsColor = const Color(0xff444444);
-
+  static Color addressSqureColor = const Color(0xffE3DDD6);
   //static Color bgSideMenu = Color(0xff131e29);
   static Color fontGrey = const Color(0xff474749);
   static Color whopperBlack = const Color(0xff21114b);
