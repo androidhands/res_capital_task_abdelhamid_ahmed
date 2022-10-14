@@ -9,4 +9,5 @@ class HomeViewModel extends GetxController {
 
   HomeViewModel({this.getAddressUseCase, this.getCategoriesUseCase, this.getOffersUseCase, this.getDealsUseCase});
   
+
 }
