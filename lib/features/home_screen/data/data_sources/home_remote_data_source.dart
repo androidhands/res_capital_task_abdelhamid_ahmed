@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
+import 'package:res_capital_task_abdelhamid_ahmed/core/error/exceptions.dart';
 import 'package:res_capital_task_abdelhamid_ahmed/core/error/failure.dart';
 import 'package:res_capital_task_abdelhamid_ahmed/features/home_screen/data/models/addresses_model.dart';
 import 'package:res_capital_task_abdelhamid_ahmed/features/home_screen/data/models/cart_model.dart';
@@ -33,7 +34,7 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
 
       return List<Address>.from(data.map((e) => AddressesModel.fromJson(e)));
     } on FlutterError catch (e) {
-      throw ServerFailure(e.message);
+      throw ServerException(e.message);
     }
   }
 
@@ -47,7 +48,7 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
 
       return List<Cart>.from(data.map((e) => CartModel.fromJson(e)));
     } on FlutterError catch (e) {
-      throw ServerFailure(e.message);
+      throw ServerException(e.message);
     }
   }
 
@@ -62,7 +63,7 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
       return List<Categories>.from(
           data.map((e) => CategoriesModel.fromJson(e)));
     } on FlutterError catch (e) {
-      throw ServerFailure(e.message);
+      throw ServerException(e.message);
     }
   }
 
@@ -76,7 +77,7 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
 
       return List<Deals>.from(data.map((e) => DealsModel.fromJson(e)));
     } on FlutterError catch (e) {
-      throw ServerFailure(e.message);
+      throw ServerException(e.message);
     }
   }
 
@@ -90,7 +91,7 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
 
       return List<Offers>.from(data.map((e) => OffersModel.fromJson(e)));
     } on FlutterError catch (e) {
-      throw ServerFailure(e.message);
+      throw ServerException(e.message);
     }
   }
 }
