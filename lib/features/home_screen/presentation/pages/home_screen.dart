@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -17,32 +16,6 @@ class HomeScreen extends GetWidget<HomeViewModel> {
 
   @override
   Widget build(BuildContext context) {
-   /*  List<OffersModel> list = [];
-    list.add(OffersModel(
-        type: 'type',
-        product: 'product',
-        color: AppColor.myThemeColor.value,
-        newPrice: 12.0,
-        oldPrice: 15.0,
-        note: '* Available until 24 December 2020'));
-
-    list.add(OffersModel(
-        type: 'type',
-        product: 'product',
-        color: AppColor.categoryBistage.value,
-        newPrice: 12.0,
-        oldPrice: 15.0,
-        note: '* Available until 24 December 2020'));
-    list.add(OffersModel(
-        type: 'type',
-        product: 'product',
-        color: AppColor.categoryMoove.value,
-        newPrice: 12.0,
-        oldPrice: 15.0,
-        note: '* Available until 24 December 2020'));
-
-    debugPrint(jsonEncode(list));
- */
     return Obx(
       () => SingleChildScrollView(
           child: Column(
@@ -57,7 +30,7 @@ class HomeScreen extends GetWidget<HomeViewModel> {
           const SearchWidget(),
           SizedBox(
             height: 70,
-            child: controller.isLoodingCategories.value
+            child: controller.isLoodinAddresses.value
                 ? const Center(
                     child: CircularProgressIndicator(),
                   )
@@ -134,7 +107,7 @@ class HomeScreen extends GetWidget<HomeViewModel> {
                         height: 150,
                         child: ListView(
                           scrollDirection: Axis.horizontal,
-                          children: controller.dealsList
+                          children: controller.dealsList.value!
                               .map((e) => SingleDealsWidget(
                                     deals: e,
                                   ))

@@ -26,8 +26,8 @@ class HomeViewModel extends GetxController {
   List<Address> get addressesList => _addressesList.value!;
   final Rxn<List<Categories>> _categoriesList = Rxn<List<Categories>>();
   List<Categories> get categoriesList => _categoriesList.value!;
-  final Rxn<List<Deals>> _dealsList = Rxn<List<Deals>>();
-  List<Deals> get dealsList => _dealsList.value!;
+  final Rxn<List<Deals>> dealsList = Rxn<List<Deals>>();
+
   final Rxn<List<Offers>> _offersList = Rxn<List<Offers>>();
   List<Offers> get offersList => _offersList.value!;
 
@@ -98,8 +98,8 @@ class HomeViewModel extends GetxController {
     }, (r) {
       isLoodinDeals.value = false;
 
-      _dealsList.value = null;
-      _dealsList.value = r;
+      dealsList.value = null;
+      dealsList.value = r;
       update();
     });
   }
@@ -139,5 +139,14 @@ class HomeViewModel extends GetxController {
     _currentAddress.value = null;
     _currentAddress.value = e;
     update();
+  }
+
+  void addToFavourits(Deals deals) {
+    debugPrint(deals.isFavourite!.toString());
+    bool fav = !deals.isFavourite!;
+    dealsList.value![dealsList.value!.indexOf(deals)].isFavourite = fav;
+    update();
+    debugPrint(dealsList.value![dealsList.value!.indexOf(deals)].isFavourite!
+        .toString());
   }
 }
