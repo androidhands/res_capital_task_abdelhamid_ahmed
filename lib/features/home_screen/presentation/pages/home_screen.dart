@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -16,6 +17,32 @@ class HomeScreen extends GetWidget<HomeViewModel> {
 
   @override
   Widget build(BuildContext context) {
+   /*  List<OffersModel> list = [];
+    list.add(OffersModel(
+        type: 'type',
+        product: 'product',
+        color: AppColor.myThemeColor.value,
+        newPrice: 12.0,
+        oldPrice: 15.0,
+        note: '* Available until 24 December 2020'));
+
+    list.add(OffersModel(
+        type: 'type',
+        product: 'product',
+        color: AppColor.categoryBistage.value,
+        newPrice: 12.0,
+        oldPrice: 15.0,
+        note: '* Available until 24 December 2020'));
+    list.add(OffersModel(
+        type: 'type',
+        product: 'product',
+        color: AppColor.categoryMoove.value,
+        newPrice: 12.0,
+        oldPrice: 15.0,
+        note: '* Available until 24 December 2020'));
+
+    debugPrint(jsonEncode(list));
+ */
     return Obx(
       () => SingleChildScrollView(
           child: Column(
@@ -28,94 +55,121 @@ class HomeScreen extends GetWidget<HomeViewModel> {
                   address: controller.currentAddress,
                 ),
           const SearchWidget(),
-          controller.isLoodingCategories.value
-              ? const Center(
-                  child: CircularProgressIndicator(),
-                )
-              : ListView(
-                  shrinkWrap: true,
-                  scrollDirection: Axis.horizontal,
-                  children: controller.addressesList
-                      .map((e) => AddressWidget(
-                            address: e,
-                          ))
-                      .toList(),
-                ),
-          controller.isLoodingCategories.value
-              ? const Center(
-                  child: CircularProgressIndicator(),
-                )
-              : Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(5.0),
-                      child: Text(
-                        AppConstants.categoryTxt,
-                        style: GoogleFonts.poppins(
-                            color: AppColor.fontGrey,
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold),
+          SizedBox(
+            height: 70,
+            child: controller.isLoodingCategories.value
+                ? const Center(
+                    child: CircularProgressIndicator(),
+                  )
+                : ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: controller.addressesList
+                        .map((e) => GestureDetector(
+                              onTap: () {
+                                controller.setCurrentAddress(e);
+                              },
+                              child: AddressWidget(
+                                address: e,
+                              ),
+                            ))
+                        .toList(),
+                  ),
+          ),
+          SizedBox(
+            height: 120,
+            child: controller.isLoodingCategories.value
+                ? const Center(
+                    child: CircularProgressIndicator(),
+                  )
+                : Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SizedBox(
+                        height: 5,
                       ),
-                    ),
-                    ListView(
-                      shrinkWrap: true,
-                      scrollDirection: Axis.horizontal,
-                      children: controller.categoriesList
-                          .map((e) => SingleCategoryWidget(
-                                categories: e,
-                              ))
-                          .toList(),
-                    ),
-                  ],
-                ),
-          controller.isLoodinDeals.value
-              ? const Center(
-                  child: CircularProgressIndicator(),
-                )
-              : Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(5.0),
-                      child: Text(
-                        AppConstants.dealsTxt,
-                        style: GoogleFonts.poppins(
-                            color: AppColor.fontGrey,
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold),
+                      Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: Text(
+                          AppConstants.categoryTxt,
+                          style: GoogleFonts.poppins(
+                              color: AppColor.fontGrey,
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold),
+                        ),
                       ),
-                    ),
-                    ListView(
-                      shrinkWrap: true,
-                      scrollDirection: Axis.horizontal,
-                      children: controller.dealsList
-                          .map((e) => SingleDealsWidget(
-                                deals: e,
-                              ))
-                          .toList(),
-                    ),
-                  ],
-                ),
-          controller.isLoodinOffers.value
-              ? const Center(
-                  child: CircularProgressIndicator(),
-                )
-              : StreamBuilder<Object>(
-                  stream: null,
-                  builder: (context, snapshot) {
-                    return Column(
-                      children: [
-                        ListView(
-                          shrinkWrap: true,
+                      SizedBox(
+                        height: 80,
+                        child: ListView(
                           scrollDirection: Axis.horizontal,
-                          children: controller.offersList
-                              .map((e) => SingleOfferWidget(
-                                    offers: e,
+                          children: controller.categoriesList
+                              .map((e) => SingleCategoryWidget(
+                                    categories: e,
                                   ))
                               .toList(),
                         ),
-                      ],
-                    );
-                  }),
+                      ),
+                    ],
+                  ),
+          ),
+          SizedBox(
+            height: 180,
+            child: controller.isLoodinDeals.value
+                ? const Center(
+                    child: CircularProgressIndicator(),
+                  )
+                : Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: Text(
+                          AppConstants.dealsTxt,
+                          style: GoogleFonts.poppins(
+                              color: AppColor.fontGrey,
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 150,
+                        child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          children: controller.dealsList
+                              .map((e) => SingleDealsWidget(
+                                    deals: e,
+                                  ))
+                              .toList(),
+                        ),
+                      ),
+                    ],
+                  ),
+          ),
+          SizedBox(
+            height: 220,
+            child: controller.isLoodinOffers.value
+                ? const Center(
+                    child: CircularProgressIndicator(),
+                  )
+                : StreamBuilder<Object>(
+                    stream: null,
+                    builder: (context, snapshot) {
+                      return Column(
+                        children: [
+                          SizedBox(
+                            height: 215,
+                            child: ListView(
+                              scrollDirection: Axis.horizontal,
+                              children: controller.offersList
+                                  .map((e) => SingleOfferWidget(
+                                        offers: e,
+                                      ))
+                                  .toList(),
+                            ),
+                          ),
+                        ],
+                      );
+                    }),
+          )
         ],
       )),
     );

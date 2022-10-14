@@ -8,13 +8,12 @@ class SingleCategoryWidget extends StatelessWidget {
 
   const SingleCategoryWidget({super.key, this.categories});
 
-
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 77,
-      width: 66,
-      margin: const EdgeInsets.all(8),
+      height: 80,
+      width: 80,
+      margin: const EdgeInsets.all(3),
       padding: const EdgeInsets.all(3),
       child: Column(children: [
         Container(
@@ -23,7 +22,7 @@ class SingleCategoryWidget extends StatelessWidget {
           margin: const EdgeInsets.all(3),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
-            color: categories!.color,
+            color: Color(categories!.color),
           ),
         ),
         Text(

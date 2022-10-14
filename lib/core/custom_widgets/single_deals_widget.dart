@@ -8,13 +8,13 @@ class SingleDealsWidget extends StatelessWidget {
   final Deals? deals;
 
   const SingleDealsWidget({super.key, this.deals});
-  
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 110,
-      margin: const EdgeInsets.only(left: 14, right: 14),
+      height: 120,
+      width: 300,
+      margin: const EdgeInsets.only(left: 5, right: 5),
       padding: const EdgeInsets.all(5),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(13),
@@ -29,7 +29,7 @@ class SingleDealsWidget extends StatelessWidget {
                 height: 100,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
-                  color:deals!.color!,
+                  color: Color(deals!.color!),
                 ),
               ),
               Positioned(
@@ -42,7 +42,9 @@ class SingleDealsWidget extends StatelessWidget {
                         borderRadius: BorderRadius.circular(75),
                         color: AppColor.white),
                     child: Image.asset(
-                     deals!.isFavourite!?'assets/heart_red.png': 'assets/heart_transparent.png',
+                      deals!.isFavourite!
+                          ? 'assets/heart_red.png'
+                          : 'assets/heart_transparent.png',
                       height: 30,
                       width: 30,
                     ),
@@ -79,8 +81,8 @@ class SingleDealsWidget extends StatelessWidget {
                           color: AppColor.fontGrey,
                         ),
                       ),
-                       TextSpan(
-                        text:deals!.address!,
+                      TextSpan(
+                        text: deals!.address!,
                       ),
                     ],
                     style: GoogleFonts.poppins(

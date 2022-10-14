@@ -8,12 +8,12 @@ class AddressWidget extends StatelessWidget {
 
   const AddressWidget({super.key, this.address});
 
-
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 60,
-      margin: const EdgeInsets.only(left: 14, right: 14),
+      height: 50,
+      width: 170,
+      margin: const EdgeInsets.only(left: 5, right: 5),
       padding: const EdgeInsets.all(5),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(13),
@@ -36,7 +36,7 @@ class AddressWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                 address!.addressType!,
+                  address!.addressType!,
                   style: GoogleFonts.poppins(
                       color: AppColor.searchIconsColor,
                       fontSize: 11,
@@ -48,7 +48,7 @@ class AddressWidget extends StatelessWidget {
                       color: AppColor.fontGrey, fontSize: 9),
                 ),
                 Text(
-                 address!.street!,
+                  address!.street!,
                   style: GoogleFonts.poppins(
                       color: AppColor.fontGrey, fontSize: 9),
                 )

@@ -7,7 +7,7 @@ class ScreensViewModel extends GetxController {
   final RxInt _selectedIndex = 0.obs;
   get selectedIndex => _selectedIndex.value;
 
-  final Rxn<Widget> _currentScreen = Rxn<Widget>(HomeScreen());
+  final Rxn<Widget> _currentScreen = Rxn<Widget>(const HomeScreen());
   get currentScreen => _currentScreen.value;
 
   changeCurrentScreen(Widget widget) {

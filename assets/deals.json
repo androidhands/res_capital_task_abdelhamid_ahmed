@@ -1,29 +1,47 @@
 [
     {
-        "": "product",
-        "color": "Color(0xffcdf5e7)",
-        "pricesCount": 2,
-        "address": "address",
-        "newPrice": 12.2,
-        "oldPrice": 13.1,
+        "product": "Summer Sun Ice Cream Pack",
+        "color": 4294557101,
+        "pricesCount": 5,
+        "address": "15 Minutes Away",
+        "newPrice": 12.5,
+        "oldPrice": 16.2,
         "isFavourite": true
     },
     {
-        "": "product",
-        "color": "Color(0xffcdf5e7)",
-        "pricesCount": 2,
+        "product": "product",
+        "color": 4291687911,
+        "pricesCount": 5,
         "address": "address",
-        "newPrice": 12.2,
-        "oldPrice": 13.1,
+        "newPrice": 12.5,
+        "oldPrice": 16.5,
+        "isFavourite": false
+    },
+    {
+        "product": "product",
+        "color": 4291687911,
+        "pricesCount": 5,
+        "address": "address",
+        "newPrice": 12.5,
+        "oldPrice": 16.3,
         "isFavourite": true
     },
     {
-        "": "product",
-        "color": "Color(0xffcdf5e7)",
-        "pricesCount": 2,
+        "product": "product",
+        "color": 4289784573,
+        "pricesCount": 5,
         "address": "address",
-        "newPrice": 12.2,
-        "oldPrice": 13.1,
-        "isFavourite": true
+        "newPrice": 12.5,
+        "oldPrice": 16.3,
+        "isFavourite": false
+    },
+    {
+        "product": "product",
+        "color": 4294629741,
+        "pricesCount": 5,
+        "address": "address",
+        "newPrice": 12.5,
+        "oldPrice": 16.7,
+        "isFavourite": false
     }
 ]

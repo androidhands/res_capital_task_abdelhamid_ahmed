@@ -26,6 +26,7 @@ class OffersModel extends Offers {
       'type': type,
       'product': product,
       'color': color,
+      'newPrice':newPrice,
       'oldPrice': oldPrice,
       'note': note,
     };

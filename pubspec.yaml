@@ -76,6 +76,11 @@ flutter:
     - assets/notification.png
     - assets/top_location.png
     - assets/heart_transparent.png
+    - assets/cart.json
+    - assets/categories.json
+    - assets/deals.json
+    - assets/offers.json
+    - assets/addresses.json
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

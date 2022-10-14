@@ -1,22 +1,30 @@
 [
     {
-        "category": "categroy",
-        "color": "Color(0xffcdf5e7)"
+        "category": "Steak",
+        "color": 4291687911
     },
     {
-        "category": "categroy",
-        "color": "Color(0xffcdf5e7)"
+        "category": "Vegetables",
+        "color": 4289784573
     },
     {
-        "category": "categroy",
-        "color": "Color(0xffcdf5e7)"
+        "category": "Beverages",
+        "color": 4294942146
     },
     {
-        "category": "categroy",
-        "color": "Color(0xffcdf5e7)"
+        "category": "Fish",
+        "color": 4291606783
     },
     {
-        "category": "categroy",
-        "color": "Color(0xffcdf5e7)"
+        "category": "Juice",
+        "color": 4294557101
+    },
+    {
+        "category": "Fruits",
+        "color": 4294629741
+    },
+    {
+        "category": "Sweets",
+        "color": 4289784573
     }
 ]

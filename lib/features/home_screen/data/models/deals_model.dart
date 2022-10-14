@@ -24,7 +24,7 @@ class DealsModel extends Deals {
   }
   Map<String, dynamic> toJson() {
     return {
-      '': product,
+      'product': product,
       'color': color,
       'pricesCount': pricesCount,
       'address': address,

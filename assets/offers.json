@@ -1,23 +1,26 @@
 [
     {
-        "type": "type",
+        "type": "MEGA",
         "product": "product",
-        "color": "Color(0xffcdf5e7)",
-        "oldPrice": 13.1,
-        "note": "note"
+        "color": 4291606783,
+        "newPrice": 12.0,
+        "oldPrice": 15.0,
+        "note": "* Available until 24 December 2020"
     },
     {
         "type": "type",
         "product": "product",
-        "color": "Color(0xffccb8ff)",
-        "oldPrice": 13.1,
-        "note": "note"
+        "color": 4291687911,
+        "newPrice": 12.0,
+        "oldPrice": 15.0,
+        "note": "* Available until 24 December 2020"
     },
     {
         "type": "type",
         "product": "product",
-        "color": "Color(0xffb0eafd)",
-        "oldPrice": 13.1,
-        "note": "note"
+        "color": 4291606783,
+        "newPrice": 12.0,
+        "oldPrice": 15.0,
+        "note": "* Available until 24 December 2020"
     }
 ]

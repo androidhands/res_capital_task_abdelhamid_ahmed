@@ -134,4 +134,10 @@ class HomeViewModel extends GetxController {
     getDealsList();
     getOffersList();
   }
+
+  void setCurrentAddress(Address e) {
+    _currentAddress.value = null;
+    _currentAddress.value = e;
+    update();
+  }
 }

@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:res_capital_task_abdelhamid_ahmed/core/app_colors/app_color.dart';
-import 'package:res_capital_task_abdelhamid_ahmed/core/app_constants/app_constants.dart';
 import 'package:res_capital_task_abdelhamid_ahmed/features/home_screen/domain/entities/offers_entity.dart';
 
 class SingleOfferWidget extends StatelessWidget {
@@ -13,12 +12,13 @@ class SingleOfferWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 141,
+      height: 160,
+      width: 300,
       margin: const EdgeInsets.only(left: 14, right: 14),
       padding: const EdgeInsets.all(5),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(13),
-          color: offers!.color!,
+          color: Color(offers!.color!),
           border: Border.all(width: 0.2, color: AppColor.fontGrey)),
       child: Row(
         children: [
