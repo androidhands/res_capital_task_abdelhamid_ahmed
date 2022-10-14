@@ -3,12 +3,15 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:res_capital_task_abdelhamid_ahmed/core/app_colors/app_color.dart';
 import 'package:res_capital_task_abdelhamid_ahmed/features/cart_screen/presentation/pages/cart_page.dart';
+import 'package:res_capital_task_abdelhamid_ahmed/features/home_screen/presentation/pages/home_screen.dart';
 import 'package:res_capital_task_abdelhamid_ahmed/features/home_screen/presentation/view_models/screens_view_model.dart';
 
 class HomePage extends GetWidget<ScreensViewModel> {
+  const HomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Obx((() => Scaffold(
+    return Obx(() => Scaffold(
           floatingActionButton: FloatingActionButton(
             onPressed: null,
             backgroundColor: AppColor.myThemeColor,
@@ -37,7 +40,7 @@ class HomePage extends GetWidget<ScreensViewModel> {
               shape: const CircularNotchedRectangle(),
               notchMargin: 5,
               clipBehavior: Clip.antiAlias,
-              child: Container(
+              child: SizedBox(
                 height: 56,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -45,7 +48,7 @@ class HomePage extends GetWidget<ScreensViewModel> {
                     IconButton(
                         icon: const ImageIcon(AssetImage('assets/grocery.png')),
                         onPressed: () {
-                          controller.changeCurrentScreen(HomePage());
+                          controller.changeCurrentScreen(HomeScreen());
                         }),
                     IconButton(
                         icon: const ImageIcon(
@@ -59,7 +62,7 @@ class HomePage extends GetWidget<ScreensViewModel> {
                     IconButton(
                         icon: const ImageIcon(AssetImage('assets/cart.png')),
                         onPressed: () {
-                           controller.changeCurrentScreen(CartPage());
+                          controller.changeCurrentScreen(CartPage());
                         }),
                   ],
                 ),
@@ -67,6 +70,6 @@ class HomePage extends GetWidget<ScreensViewModel> {
           floatingActionButtonLocation:
               FloatingActionButtonLocation.centerDocked,
           body: SafeArea(child: controller.currentScreen),
-        )));
+        ));
   }
 }
