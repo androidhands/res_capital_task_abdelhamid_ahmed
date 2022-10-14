@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:res_capital_task_abdelhamid_ahmed/core/app_colors/app_color.dart';
 import 'package:res_capital_task_abdelhamid_ahmed/core/custom_widgets/address_widget.dart';
 import 'package:res_capital_task_abdelhamid_ahmed/core/custom_widgets/location_top_widget.dart';
@@ -106,10 +107,47 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+        onPressed: null,
+        backgroundColor: AppColor.myThemeColor,
+        child: Stack(
+          children: [
+            Image.asset(
+              'assets/cart_floating.png',
+              height: 50,
+              width: 50,
+            ),
+            Positioned(
+              top: 4,
+              left: 5,
+              child: Text(
+                '\$12',
+                style: GoogleFonts.poppins(
+                    color: AppColor.white,
+                    fontSize: 9,
+                    fontWeight: FontWeight.bold),
+              ),
+            )
+          ],
+        ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+          shape: const CircularNotchedRectangle(),
+          notchMargin: 5,
+          clipBehavior: Clip.antiAlias,
+          child: Container(
+            height: 56,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                IconButton(icon: Icon(Icons.home), onPressed: () {}),
+                IconButton(icon: Icon(Icons.search), onPressed: () {}),
+                const SizedBox(width: 40), // The dummy child
+                IconButton(icon: Icon(Icons.notifications), onPressed: () {}),
+                IconButton(icon: Icon(Icons.message), onPressed: () {}),
+              ],
+            ),
+          )),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
