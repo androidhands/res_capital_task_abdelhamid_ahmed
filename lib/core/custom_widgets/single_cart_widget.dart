@@ -17,6 +17,7 @@ class SingleCartWidget extends StatelessWidget {
         init: Get.find<CartViewModel>(),
         builder: (controller) {
           return Container(
+            
             height: 80,
             margin: const EdgeInsets.all(3),
             padding: const EdgeInsets.all(3),
@@ -61,66 +62,68 @@ class SingleCartWidget extends StatelessWidget {
                       ],
                     ),
                   )),
-                  Expanded(
-                      child: Row(
+                  Row(
                     children: [
-                      GestureDetector(
-                        onTap: () {
-                          controller.decrement(cart!,index!);
-                        },
-                        child: Material(
-                            child: Container(
-                          height: 35,
-                          width: 35,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: AppColor.incrementBtnColor),
-                          child: Center(
-                            child: Text(
-                              '-',
-                              style: TextStyle(
-                                  color: AppColor.incrementSign, fontSize: 22),
-                            ),
-                          ),
-                        )),
-                      ),
-                      const SizedBox(
-                        width: 8,
-                      ),
-                      Center(
+                  GestureDetector(
+                    key:  Key('decrement_btn${index.toString()}'),
+                    onTap: () {
+                      controller.decrement(cart!,index!);
+                    },
+                    child: Material(
+                        child: Container(
+                      height: 35,
+                      width: 35,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: AppColor.incrementBtnColor),
+                      child: Center(
                         child: Text(
-                          cart!.count.toString(),
-                          style: GoogleFonts.poppins(
-                              color: AppColor.black,
-                              fontSize: 19,
-                              fontWeight: FontWeight.bold),
+                          '-',
+                          style: TextStyle(
+                              color: AppColor.incrementSign, fontSize: 22),
                         ),
                       ),
-                      const SizedBox(
-                        width: 8,
+                    )),
+                  ),
+                  const SizedBox(
+                    width: 8,
+                  ),
+                  Center(
+                    child: Text(
+                      key:  Key('price_text${index.toString()}'),
+                      cart!.count.toString(),
+                      style: GoogleFonts.poppins(
+                          color: AppColor.black,
+                          fontSize: 19,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 8,
+                  ),
+                  GestureDetector(
+                    key:  Key('increment_btn${index.toString()}'),
+                    onTap: () {
+                      controller.increment(cart!,index!);
+                    },
+                    child: Material(
+                        child: Container(
+                      height: 35,
+                      width: 35,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: AppColor.incrementBtnColor),
+                      child: Center(
+                        child: Text(
+                          '+',
+                          style: TextStyle(
+                              color: AppColor.incrementSign, fontSize: 22),
+                        ),
                       ),
-                      GestureDetector(
-                        onTap: () {
-                          controller.increment(cart!,index!);
-                        },
-                        child: Material(
-                            child: Container(
-                          height: 35,
-                          width: 35,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: AppColor.incrementBtnColor),
-                          child: Center(
-                            child: Text(
-                              '+',
-                              style: TextStyle(
-                                  color: AppColor.incrementSign, fontSize: 22),
-                            ),
-                          ),
-                        )),
-                      )
+                    )),
+                  )
                     ],
-                  ))
+                  )
                 ]),
           );
         });

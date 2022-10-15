@@ -51,6 +51,7 @@ class HomePage extends GetWidget<ScreensViewModel> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     IconButton(
+                       key: const Key('home_btn'),
                         icon: const ImageIcon(AssetImage('assets/grocery.png')),
                         onPressed: () {
                           controller.changeCurrentScreen(HomeScreen());
@@ -65,6 +66,7 @@ class HomePage extends GetWidget<ScreensViewModel> {
                             const ImageIcon(AssetImage('assets/favourits.png')),
                         onPressed: () {}),
                     IconButton(
+                      key: const Key('cart_btn'),
                         icon: const ImageIcon(AssetImage('assets/cart.png')),
                         onPressed: () {
                           controller.changeCurrentScreen(CartPage());
