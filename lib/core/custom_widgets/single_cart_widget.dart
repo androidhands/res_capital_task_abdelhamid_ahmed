@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -25,8 +24,8 @@ class SingleCartWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                    width: 66,
-                    height: 66,
+                    width: 59,
+                    height: 59,
                     margin: const EdgeInsets.all(3),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
@@ -35,7 +34,7 @@ class SingleCartWidget extends StatelessWidget {
                   ),
                   Expanded(
                       child: Padding(
-                    padding: const EdgeInsets.only(left: 10),
+                    padding: const EdgeInsets.only(left: 5),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -44,19 +43,19 @@ class SingleCartWidget extends StatelessWidget {
                           cart!.product!,
                           style: GoogleFonts.poppins(
                               color: AppColor.searchIconsColor,
-                              fontSize: 13,
+                              fontSize: 12,
                               fontWeight: FontWeight.bold),
                         ),
                         Text(
                           cart!.description!,
                           style: GoogleFonts.poppins(
-                              color: AppColor.fontGrey, fontSize: 10),
+                              color: AppColor.fontGrey, fontSize: 9),
                         ),
                         Text(
                           '\$${cart!.totalPrice!.toStringAsFixed(2)}',
                           style: GoogleFonts.poppins(
                               color: AppColor.myThemeColor,
-                              fontSize: 18,
+                              fontSize: 16,
                               fontWeight: FontWeight.bold),
                         ),
                       ],
@@ -71,8 +70,8 @@ class SingleCartWidget extends StatelessWidget {
                         },
                         child: Material(
                             child: Container(
-                          height: 43,
-                          width: 43,
+                          height: 35,
+                          width: 35,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                               color: AppColor.incrementBtnColor),
@@ -86,19 +85,19 @@ class SingleCartWidget extends StatelessWidget {
                         )),
                       ),
                       const SizedBox(
-                        width: 15,
+                        width: 8,
                       ),
                       Center(
                         child: Text(
                           cart!.count.toString(),
                           style: GoogleFonts.poppins(
                               color: AppColor.black,
-                              fontSize: 20,
+                              fontSize: 19,
                               fontWeight: FontWeight.bold),
                         ),
                       ),
                       const SizedBox(
-                        width: 15,
+                        width: 8,
                       ),
                       GestureDetector(
                         onTap: () {
@@ -106,8 +105,8 @@ class SingleCartWidget extends StatelessWidget {
                         },
                         child: Material(
                             child: Container(
-                          height: 43,
-                          width: 43,
+                          height: 35,
+                          width: 35,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                               color: AppColor.incrementBtnColor),
