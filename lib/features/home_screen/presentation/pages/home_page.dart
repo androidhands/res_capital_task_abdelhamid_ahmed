@@ -54,7 +54,7 @@ class HomePage extends GetWidget<ScreensViewModel> {
                        key: const Key('home_btn'),
                         icon: const ImageIcon(AssetImage('assets/grocery.png')),
                         onPressed: () {
-                          controller.changeCurrentScreen(HomeScreen());
+                          controller.changeCurrentScreen(const HomeScreen());
                         }),
                     IconButton(
                         icon: const ImageIcon(
@@ -69,7 +69,7 @@ class HomePage extends GetWidget<ScreensViewModel> {
                       key: const Key('cart_btn'),
                         icon: const ImageIcon(AssetImage('assets/cart.png')),
                         onPressed: () {
-                          controller.changeCurrentScreen(CartPage());
+                          controller.changeCurrentScreen(const CartPage());
                         }),
                   ],
                 ),

@@ -1,6 +1,7 @@
 import 'package:res_capital_task_abdelhamid_ahmed/features/cart_screen/domain/entities/cart_entity.dart';
 import 'package:meta/meta.dart';
 
+// ignore: must_be_immutable
 class CartModel extends Cart {
   CartModel(
       {@required product,

@@ -1,6 +1,7 @@
 import 'package:meta/meta.dart';
 import 'package:res_capital_task_abdelhamid_ahmed/features/home_screen/domain/entities/deals_entity.dart';
 
+// ignore: must_be_immutable
 class DealsModel extends Deals {
   DealsModel(
       {@required product,

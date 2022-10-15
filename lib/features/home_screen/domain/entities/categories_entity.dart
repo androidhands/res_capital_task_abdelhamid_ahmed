@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter/animation.dart';
 
 class Categories extends Equatable {
   final String? category;

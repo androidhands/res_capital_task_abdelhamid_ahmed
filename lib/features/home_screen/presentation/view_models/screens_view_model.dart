@@ -1,6 +1,5 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:res_capital_task_abdelhamid_ahmed/features/home_screen/presentation/pages/home_page.dart';
 import 'package:res_capital_task_abdelhamid_ahmed/features/home_screen/presentation/pages/home_screen.dart';
 
 class ScreensViewModel extends GetxController {

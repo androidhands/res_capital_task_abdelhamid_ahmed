@@ -1,6 +1,5 @@
 import 'package:get/get.dart';
 import 'package:res_capital_task_abdelhamid_ahmed/features/cart_screen/data/data_sources/cart_remote_data_source.dart';
-import 'package:res_capital_task_abdelhamid_ahmed/features/cart_screen/data/models/cart_model.dart';
 import 'package:res_capital_task_abdelhamid_ahmed/features/cart_screen/data/repositories/cart_repository_impl.dart';
 import 'package:res_capital_task_abdelhamid_ahmed/features/cart_screen/domain/repositories/cart_repository.dart';
 import 'package:res_capital_task_abdelhamid_ahmed/features/cart_screen/domain/usecases/cart_use_cases.dart';

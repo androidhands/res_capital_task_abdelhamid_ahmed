@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 
+// ignore: must_be_immutable
 class Deals extends Equatable {
   final String? product;
   final dynamic color;

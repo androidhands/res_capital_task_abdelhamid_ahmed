@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:res_capital_task_abdelhamid_ahmed/features/home_screen/presentation/pages/home_page.dart';
@@ -14,14 +13,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-  
     return GetMaterialApp(
       title: 'RES Task',
       initialBinding: MyAppBindings(),
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      home: const HomePage(),
     );
   }
 }

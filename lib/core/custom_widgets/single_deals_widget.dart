@@ -113,7 +113,7 @@ class SingleDealsWidget extends StatelessWidget {
                             child: Text(
                               "\$${deals!.oldPrice!}",
                               style: GoogleFonts.poppins(
-                                color: Color(0xff464646),
+                                color: const Color(0xff464646),
                                 fontSize: 13,
                                 decoration: TextDecoration.lineThrough,
                               ),
